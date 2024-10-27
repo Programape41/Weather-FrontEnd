@@ -15,7 +15,7 @@ document.getElementById('hidepw').addEventListener('click', function (event) {
 
 async function loginUser(username, password) {
     try {
-        const response = await fetch("https://www.metools.info", {
+        const response = await fetch("https://s0hr7iwr7u.hzh.sealos.run/login_user", {
             method: "POST",
             headers: {
                 "Content-Type": "application/json"
@@ -26,13 +26,15 @@ async function loginUser(username, password) {
             })
         });
 
+        console.log(response);
+
         if (response.ok) {
             const data = await response.json();
             // 将Token存储在LocalStorage中
             localStorage.setItem("token", data.token);
             alert("登录成功！");
             // 重定向到主页或其他页面
-            window.location.href = "/home";
+            //window.location.href = "/home";
         } else {
             const errorData = await response.json();
             alert("登录失败: " + errorData.message);

@@ -14,7 +14,7 @@ document.getElementById('hidepw').addEventListener('click', function (event) {
 
 async function registerUser(username, password) {
     try {
-        const response = await fetch("https://www.metools.info", {
+        const response = await fetch("https://s0hr7iwr7u.hzh.sealos.run/add_user", {
             method: "POST",
             headers: {
                 "Content-Type": "application/json"
@@ -22,19 +22,20 @@ async function registerUser(username, password) {
             body: JSON.stringify({
                 username: username,
                 password: password
-            })
+            }),
+            mode: "cors" // 明确指定为 cors 模式
         });
-        
+        console.log(response);
         if (response.ok) {
             const data = await response.json();
-            alert("登录成功！欢迎 " + data.username);
+            alert("注册成功！欢迎 " + data.result.username);
         } else {
             const errorData = await response.json();
-            alert("登录失败: " + errorData.message);
+            alert("注册失败: " + errorData.message);
         }
     } catch (error) {
         console.error("请求出错:", error);
-        alert("网络出错，请稍后再试。");
+        alert("您的账号已存在，请直接登录！");
     }
 }
 
