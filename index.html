@@ -229,27 +229,24 @@
         </div>
 
         <div class="right">
+          <h2>留言墙</h2>
           <div class="card">
             <div class="right-top">
               <div class="container">
-                <div class="comment">
-                  <h2>评论区</h2>
-                  <div class="comment-box">
-                    <div class="comment-item">
-                      <div class="comment-user">                      
-                        <p>用户名</p>
-                      </div>
-                      <div class="comment-content">
-                        <p>评论内容</p>
-                      </div>
-                    </div>
-                  </div>
+                <!-- 留言框 -->
+                <div class="message-box" id="messageBox">
+                  <!-- 初始的留言示例 -->
+                  <div class="message"><strong>哈哈哈：</strong>今天天气真好！</div>
+                  <div class="message"><strong>李云鹤：</strong>天气冷了，记得多穿点！</div>
                 </div>
-                <div class="comment-input">
-                  <input type="text" placeholder="请输入评论内容" />
-                  <button>提交</button>
               </div>
-          </div>
+              <!-- 输入框和提交按钮 -->
+              <div class="input-section">
+                <input type="text" id="userName" placeholder="请输入您的笔名">
+                <input type="text" id="userMessage" placeholder="请输入您的留言">
+                <button id="messageSubmit">提交</button>
+              </div>
+            </div>
         </div>
       </main>
     

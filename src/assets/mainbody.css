@@ -135,8 +135,35 @@ main .right .card {
     display: flex;
     flex-direction: column;
     margin-top: 50px;
-    height: 250px;
+    height: 400px;
     /* 垂直排列子元素 */
     padding: 1rem;
     /* 可选：增加内边距 */
+}
+
+.right h2 {
+    margin-left: 35px;
+    font-size: 50px;
+}
+
+.right .card .right-top .container {
+    display:block;
+    max-height: 208px;
+}
+
+.right .card .right-top .input-section{
+    display:flex;
+    justify-content: space-between;
+    position:fixed;
+    margin-top: 220px;
+    margin-left:50px;
+}
+
+.right .card .right-top .input-section button{
+    background-color: aliceblue;
+    display:flex;
+    width:80px;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px;
 }

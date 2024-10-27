@@ -3443,6 +3443,32 @@ function fetchIP() {
         }
     };
     
+    
+    function submitMessage() {
+        const messageBox = document.getElementById("messageBox");
+        const userName= document.getElementById("userName").value;
+        const userMessage = document.getElementById("userMessage").value;
+
+        if (userMessage.trim() !== "") {
+            // 创建新的留言元素
+            const newMessage = document.createElement("div");
+            newMessage.classList.add("message");
+            newMessage.innerHTML = `<strong>${userName}：</strong>${userMessage}`;
+            
+            // 将新留言添加到留言框
+            messageBox.appendChild(newMessage);
+
+            // 滚动到最新的留言
+            messageBox.scrollTop = messageBox.scrollHeight;
+
+            // 清空输入框
+            document.getElementById("userName").value = "";
+            document.getElementById("userMessage").value = "";
+        } else {
+            alert("留言不能为空！");
+        }
+    }
+    
 
     // 绑定表单提交事件
     document.getElementById('submit').addEventListener('click', function (event) {
@@ -3456,6 +3482,12 @@ function fetchIP() {
             event.preventDefault(); // 阻止默认行为
             fetchWeather(); // 调用获取天气信息的函数
         }
+    });
+
+    // 绑定提交信息和留言事件
+    document.getElementById('messageSubmit').addEventListener('click', function (event) {
+        event.preventDefault(); // 阻止默认行为
+        submitMessage(); // 调用提交信息的函数
     });
     
 
