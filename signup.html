@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>注册</title>
+    <link rel="stylesheet" href="src/assets/login.css">
+    <!-- <link href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css" rel="stylesheet"> -->
+</head>
+
+<body>
+    <div id="page" class="site">
+        <div class="container">
+            <div class="login">
+                <div class="hero">
+                    <h1>你好 天气<br>Hello World</h1>
+                    <p>如果你已有账号<br>可以<a href="login.html">点击这里</a>进行登录.</p>
+                    <a href="index.html">回到天气</a>
+                </div>
+                <div class="main">
+                    <form action="" method="post">
+                        <p>
+                            <input type="username" name="username" id="username" placeholder="用户名" required>
+                        </p>
+                        <p class="password">
+                            <input type="password" name="pw" id="pw" placeholder="密码" required>
+                            <i class="ri-eye-off-line"></i>
+                            <span id="hidepw">显示密码</span>
+                        </p>
+                        <p>
+                            <input type="submit" class="submit" id="register-submit" value="登录">
+                        </p>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+<script type="module" src="/src/assets/js/register.js"></script>
+</html>

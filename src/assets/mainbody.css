@@ -1,0 +1,142 @@
+/* 对于index.html 的 <main>标签进行css设置 */
+main {
+    margin-top: 40px;
+    display: flex;
+  
+}
+
+
+/* 解决导航下拉栏被遮挡问题 */
+.areaWithInfo {
+    z-index: -1;
+    position:relative;
+}
+
+.left-bottom {
+    z-index: -1;
+    position: relative;
+}
+
+main .areaWithInfo .card .container {
+    display:flex;
+}
+
+main .areaWithInfo .card .container .area-info h2
+{
+    color:white;
+    font-size: 6rem;
+    font-weight: 500;
+}
+
+main .areaWithInfo .card .container .area-info {
+    color: white;
+    font-weight: 500;
+    margin-bottom: 0.5rem;
+    text-shadow:2px 4px rgba(0, 0, 0, 0.5);
+}
+
+main .areaWithInfo .card .container .area-weather {
+    display:flex;
+    font-size: 6rem;
+    color: white;
+    font-weight: 500;
+    margin-bottom: 0.5rem;
+   
+}
+
+main .areaWithInfo .card .container .area-weather p{
+    font-size: 5rem;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    z-index: 1;
+}
+
+main .areaWithInfo .card .container .area-weather img {
+    margin-top: 10px;
+    z-index: 1;
+}
+
+#weather {
+    font-size:2rem;
+    bottom:0;
+    text-align:center;
+    /* align-self: flex-end;将元素对齐到父容器的底部 */
+    margin-top:50px;
+}
+
+.daysinfo .card {
+    background: rgba(255, 255, 255, .7);
+    -webkit-backdrop-filter: blur(15px);
+    backdrop-filter: blur(10px);
+    border-radius: 10px;/* border: 2px solid rgb(197, 197, 197); 设置边框厚度、样式和颜色 */
+    box-shadow: 0 0 30px 10px rgba(0, 0, 0, .3);
+    
+    z-index: -1;
+    display: flex;
+    flex-direction: column;
+    margin-top:50px;
+    height:250px;
+    /* 垂直排列子元素 */
+    padding: 1rem;
+    /* 可选：增加内边距 */
+}
+
+.daysinfo .card .container{
+    display:flex;
+    
+}
+
+.daysinfo .card .container {
+    display: flex;
+    flex-direction: column;/* 使子元素纵向排列 */
+    align-items: center;/* 可选：水平居中对齐子元素 */
+}
+
+.daysinfo .card .container .day {
+    display: block;
+    margin-bottom: 1px;
+    /* 可选：增加子元素之间的间距 */
+    padding-bottom: 1px;
+    /* 可选：增加内边距 */
+    border-bottom: 1px solid #ccc;
+    /* 添加底部边框作为分割线 */
+
+    justify-content: space-between;
+}
+
+.daysinfo .card .container .day:not(:last-child) {
+    margin-bottom: 1px;
+    /* 确保分割线之间有间距 */
+}
+
+.daysinfo .card .container .day>*:not(:first-child):not(:last-child) {
+    margin: 0 10px;
+    /* 增加中间元素之间的空隙 */
+}
+
+.daysinfo .card .container .day p{
+    display: inline;
+}
+
+.lowesttemp ,.highesttemp {
+    display: inline;
+}
+
+main .right .card {
+    background: rgba(255, 255, 255, .7);
+    -webkit-backdrop-filter: blur(15px);
+    backdrop-filter: blur(10px);
+    border-radius: 10px;
+    /* border: 2px solid rgb(197, 197, 197); 设置边框厚度、样式和颜色 */
+    box-shadow: 0 0 30px 10px rgba(0, 0, 0, .3);
+
+    margin-left: 30px;
+    width:700px;
+    z-index: -1;
+    display: flex;
+    flex-direction: column;
+    margin-top: 50px;
+    height: 250px;
+    /* 垂直排列子元素 */
+    padding: 1rem;
+    /* 可选：增加内边距 */
+}

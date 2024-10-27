@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <link rel="icon" href="/favicon.ico">
+    <link rel="stylesheet" type="text/css" href="./src/assets/html.css">
+    <link rel="stylesheet" href="./src/assets/nav.css">
+    <link rel="stylesheet" href="./src/assets/mainbody.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WeatherReport</title>
+    
+  </head>
+
+  <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+
+  <body>
+      <header id="nav-menu" aria-label="navigation-bar">
+        <div class="card">
+        <div class="container">
+          <div class="nav-start">
+            <a class="logo" href="/">
+              <img src="src/components/icons/WebIcon.png" width="70" height="70" alt="Inc Logo" />
+            </a>
+            <nav class="menu">
+
+              <ul class="menu-bar">
+                <li>
+                  <button class="nav-link dropdown-btn"
+                    data-dropdown="dropdown1"
+                    aria-haspopup="true"
+                    aria-expanded="false"
+                    aria-label="browse">
+                      天气网站
+                    <i class="bx bx-chevron-down" aria-hidden="true"></i>
+                  </button>
+                  <div id="dropdown1" class="dropdown">
+                    <ul role="menu">
+                      <li role="menuitem">
+                        <a class="dropdown-link" href="https://www.weather.com.cn/">
+                          <img src="./src/assets/icons/botd.svg" class="icon" />
+                          <div>
+                            <span class="dropdown-link-title">中国天气网</span>
+                            <p>Weather China</p>
+                          </div>
+                        </a>
+                      </li>
+                      <li role="menuitem">
+                        <a class="dropdown-link" href="https://weather.cma.cn/">
+                          <img src="./src/assets/icons/fs.svg" class="icon" />
+                          <div>
+                            <span class="dropdown-link-title">中国气象局</span>
+                            <p>China Meteorological Administration</p>
+                          </div>
+                        </a>
+                      </li>
+                      <li role="menuitem">
+                        <a class="dropdown-link" href="https://tianqi.moji.com/">
+                          <img src="./src/assets/icons/sp.svg" class="icon" />
+                          <div>
+                            <span class="dropdown-link-title">墨迹天气</span>
+                            <p>Mojo Weather</p>
+                          </div>
+                        </a>
+                      </li>
+                      <li role="menuitem">
+                        <a class="dropdown-link" href="https://worldweather.wmo.int/zh/home.html">
+                          <img src="./src/assets/icons/cf.svg" class="icon" />
+                          <div>
+                            <span class="dropdown-link-title">世界气象组织</span>
+                            <p>World Meteorological Organization</p>
+                          </div>
+                        </a>
+                      </li>
+                    </ul>
+
+                    <ul rold="menu">
+                      <li class="dropdown-title">
+                        <span class="dropdown-link-title">Browse by Apps</span>
+                      </li>
+                      <li role="menuitem">
+                        <a class="dropdown-link" href="#adobe-xd">
+                          <img src="./src/assets/icons/xd.svg" />
+                          Adobe XD
+                        </a>
+                      </li>
+                      <li role="menuitem">
+                        <a class="dropdown-link" href="#after-effect">
+                          <img src="./src/assets/icons/ae.svg" />
+                          After Effect
+                        </a>
+                      </li>
+                      <li role="menuitem">
+                        <a class="dropdown-link" href="#sketch">
+                          <img src="./src/assets/icons/sketch.svg" />
+                          Sketch
+                        </a>
+                      </li>
+                      <li role="menuitem">
+                        <a class="dropdown-link" href="#indesign">
+                          <img src="./src/assets/icons/indesign.svg" />
+                          Indesign
+                        </a>
+                      </li>
+                      <li role="menuitem">
+                        <a class="dropdown-link" href="#figma">
+                          <img src="./src/assets/icons/figma.svg" />
+                          Figma
+                        </a>
+                      </li>
+                    </ul>
+                  </div>
+                </li>
+                <li>
+                  <button class="nav-link dropdown-btn"
+                    data-dropdown="dropdown2"
+                    aria-haspopup="true"
+                    aria-expanded="false"
+                    aria-label="disvoer">
+                      可视化天气网站
+                    <i class="bx bx-chevron-down" aria-hidden="true"></i>
+                  </button>
+                  <div id="dropdown2" class="dropdown">
+                    <ul role="menu">
+                      <li>
+                        <span class="dropdown-link-title">Browse Categories</span>
+                      </li>
+                      <li role="menuitem">
+                        <a class="dropdown-link" href="https://www.windy.com/">Windy</a>
+                      </li>
+                      <li role="menuitem">
+                        <a class="dropdown-link" href="https://www.ventusky.com/">Ventusky</a>
+                      </li>
+                    </ul>
+                    <ul role="menu">
+                      <li>
+                        <span class="dropdown-link-title">Download App</span>
+                      </li>
+                      <li role="menuitem">
+                        <a class="dropdown-link" href="#mac-windows">MacOS & Windows</a>
+                      </li>
+                      <li role="menuitem">
+                        <a class="dropdown-link" href="#linux">Linux</a>
+                      </li>
+                    </ul>
+                  </div>
+                </li>
+                <!-- <li><a class="nav-link" herf="/">Jobs</a></li>
+                <li><a class="nav-link" herf="/">Livestream</a></li>
+                <li><a class="nav-link" herf="/">About</a></li> -->
+              </ul>
+
+            </nav>
+          </div>
+
+          <div class="nav-end">
+            <div class="right-container">
+              <form class="search" role="search">
+                <input type="search"  name="search" id="search" placeholder="Search" />
+                <i class="bx bx-search" aria-hidden="true" id="submit"></i>
+              </form>
+
+              <!-- <a herf="#profile">
+                <img src="https://github.com/Evavic44/responsive-navbar-with-dropdown/blob/main/assets/images/user.jpg?raw=true"
+                  width="30" height="30" alt="user image" />
+              </a> -->
+              <button class="btn btn-primary" onclick="window.location.href='login.html'">Log In</button>
+            </div>
+
+            <button id="hambuger" aria-label="hambuger" aria-haspopup="true" aria-expanded="false">
+              <i class="bx bx-menu" aria-hidden="true"></i> 
+            </button>
+          </div>
+        </div>
+        </div>
+      </header>
+
+      <!-- 主要部分，展示获取到的地区天气信息 -->
+      <main>
+        <div left>
+          <div class="left-top">
+            <div class="areaWithInfo">
+              <div class="card">
+                <div class="container">
+                  <div class="area-info">
+                    <h2 id="area-name">台北</h2>
+                    <p>更新时间:</p>
+                    <span id="update-time">2021-08-01 12:00</span>
+                  </div>
+                  <div class="area-weather">
+                    <p id="area-temp">30°C</p>
+                    <img id="img-weather" src="./src/components/weather-icons/icon_lightrain.png" alt="weather-icon" width="100px" height="100px" />
+                    <p id="weather">小雨</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="left-bottom">
+            <div class="daysinfo">
+              <div class="card">
+                <div class="container">
+                  <div class="day">
+                    <p class="day-left">今天</p>
+                    <img id="day1img" src="./src/components/weather-icons/icon_lightrain.png" alt="weather-icon" width="50px" height="50px" />
+                    <p id="day1weather">阵雨</p>
+                    <p class="lowesttemp" id="day1lowesttemp">30°C <span>/<span><p class="highesttemp" id="day1highesttemp"> 30°C</p>
+                  </div>
+
+                  <div class="day">
+                    <p class="day-left">明天</p>
+                    <img id="day2img" src="./src/components/weather-icons/icon_lightrain.png" alt="weather-icon" width="50px" height="50px" />
+                    <p id="day2weather">阵雨</p>
+                    <p class="lowesttemp" id="day2lowesttemp">30°C <span>/<span>
+                    <p class="highesttemp" id="day2highesttemp"> 30°C</p>
+                  </div>
+
+                  <div class="day">
+                    <p class="day-left">后天</p>
+                    <img id="day3img" src="./src/components/weather-icons/icon_lightrain.png" alt="weather-icon" width="50px" height="50px" />
+                    <p id="day3weather">阵雨</p>
+                    <p class="lowesttemp" id="day3lowesttemp">30°C <span>/<span>
+                    <p class="highesttemp" id="day3highesttemp"> 30°C</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="right">
+          <div class="card">
+            <div class="right-top">
+              <div class="container">
+                <div class="comment">
+                  <h2>评论区</h2>
+                  <div class="comment-box">
+                    <div class="comment-item">
+                      <div class="comment-user">                      
+                        <p>用户名</p>
+                      </div>
+                      <div class="comment-content">
+                        <p>评论内容</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="comment-input">
+                  <input type="text" placeholder="请输入评论内容" />
+                  <button>提交</button>
+              </div>
+          </div>
+        </div>
+      </main>
+    
+
+
+
+    <div id="app"></div>
+    <script type="module" src="/src/main.js"></script>
+    
+    <div>
+      
+
+  </body>
+</html>
