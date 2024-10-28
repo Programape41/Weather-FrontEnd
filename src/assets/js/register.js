@@ -25,12 +25,19 @@ async function registerUser(username, password) {
             }),
             mode: "cors" // 明确指定为 cors 模式
         });
-        console.log(response);
-        if (response.ok) {
-            const data = await response.json();
+        // 尝试获取原始文本内容
+        const textData = await response.text();
+        console.log("Raw Text Data:", textData);
+
+        // 尝试解析为 JSON 格式
+        const jsonData = JSON.parse(textData);
+        console.log("Parsed JSON Data:", jsonData);
+
+        if (jsonData.ok) {
+            const data = await jsonData;
             alert("注册成功！欢迎 " + data.result.username);
         } else {
-            const errorData = await response.json();
+            const errorData = await jsonData;
             alert("注册失败: " + errorData.message);
         }
     } catch (error) {

@@ -3427,7 +3427,7 @@ function fetchIP() {
                 if (weather.includes('晴')) {
                     imgElement.src = sunnyimg;
                 }
-                else if (weather === '多云') {
+                else if (weather === '多云' || weather === '阴') {
                     imgElement.src = cloudyimg;
                 }
                 else if (weather === '阵雨') {
