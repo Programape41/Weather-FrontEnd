@@ -24,7 +24,7 @@ main .areaWithInfo .card .container {
 main .areaWithInfo .card .container .area-info h2
 {
     color:white;
-    font-size: 6rem;
+    font-size: 5rem;
     font-weight: 500;
 }
 
@@ -45,7 +45,7 @@ main .areaWithInfo .card .container .area-weather {
 }
 
 main .areaWithInfo .card .container .area-weather p{
-    font-size: 5rem;
+    font-size: 4rem;
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
     z-index: 1;
 }

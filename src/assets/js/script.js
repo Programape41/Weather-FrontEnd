@@ -3593,6 +3593,8 @@ document.getElementById('messageSubmit').addEventListener('click', function (eve
         username="匿名";
     }
     submitComments(username, userMessage); // 调用提交注册信息的函数
+    
+    setTimeout(getComments, 100);
     getComments();
 
     document.getElementById('userName').value = "";
