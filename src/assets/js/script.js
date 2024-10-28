@@ -3580,6 +3580,12 @@ window.onload = function () {
 
 document.getElementById('messageSubmit').addEventListener('click', function (event) {
     event.preventDefault(); // 阻止默认行为
+
+    if (!sessionStorage.getItem("isLoggedIn")) {
+        alert("请先登录！");
+        return;
+    }
+
     var username = document.getElementById('userName').value; // 获取用户名
     var userMessage = document.getElementById('userMessage').value; // 获取密码
     if (username === "")

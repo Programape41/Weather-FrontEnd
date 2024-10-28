@@ -38,6 +38,8 @@ async function loginUser(username, password) {
             const data = await jsonData;
             // 将Token存储在LocalStorage中
             localStorage.setItem("token", data.token);
+
+            sessionStorage.setItem("isLoggedIn", "true");//设置登录状态
             alert("登录成功！");
             // 重定向到主页或其他页面
             window.location.href = "/home";
@@ -57,6 +59,7 @@ async function loginUser(username, password) {
         var password = document.getElementById('pw').value; // 获取密码
         loginUser(username, password); // 调用提交注册信息的函数
     });
+
 
 // function registerUser(username, password) {
 //     // 模拟注册用户的函数
