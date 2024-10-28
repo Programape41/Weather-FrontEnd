@@ -3444,30 +3444,30 @@ function fetchIP() {
     };
     
     
-    function submitMessage() {
-        const messageBox = document.getElementById("messageBox");
-        const userName= document.getElementById("userName").value;
-        const userMessage = document.getElementById("userMessage").value;
+    // function submitMessage() {
+    //     const messageBox = document.getElementById("messageBox");
+    //     const userName= document.getElementById("userName").value;
+    //     const userMessage = document.getElementById("userMessage").value;
 
-        if (userMessage.trim() !== "") {
-            // 创建新的留言元素
-            const newMessage = document.createElement("div");
-            newMessage.classList.add("message");
-            newMessage.innerHTML = `<strong>${userName}：</strong>${userMessage}`;
+    //     if (userMessage.trim() !== "") {
+    //         // 创建新的留言元素
+    //         const newMessage = document.createElement("div");
+    //         newMessage.classList.add("message");
+    //         newMessage.innerHTML = `<strong>${userName}：</strong>${userMessage}`;
             
-            // 将新留言添加到留言框
-            messageBox.appendChild(newMessage);
+    //         // 将新留言添加到留言框
+    //         messageBox.appendChild(newMessage);
 
-            // 滚动到最新的留言
-            messageBox.scrollTop = messageBox.scrollHeight;
+    //         // 滚动到最新的留言
+    //         messageBox.scrollTop = messageBox.scrollHeight;
 
-            // 清空输入框
-            document.getElementById("userName").value = "";
-            document.getElementById("userMessage").value = "";
-        } else {
-            alert("留言不能为空！");
-        }
-    }
+    //         // 清空输入框
+    //         document.getElementById("userName").value = "";
+    //         document.getElementById("userMessage").value = "";
+    //     } else {
+    //         alert("留言不能为空！");
+    //     }
+    // }
     
 
     // 绑定表单提交事件
@@ -3484,13 +3484,111 @@ function fetchIP() {
         }
     });
 
-    // 绑定提交信息和留言事件
-    document.getElementById('messageSubmit').addEventListener('click', function (event) {
-        event.preventDefault(); // 阻止默认行为
-        submitMessage(); // 调用提交信息的函数
-    });
+    // // 绑定提交信息和留言事件
+    // document.getElementById('messageSubmit').addEventListener('click', function (event) {
+    //     event.preventDefault(); // 阻止默认行为
+    //     submitMessage(); // 调用提交信息的函数
+    // });
     
+
+
+async function getComments() {
+    try {
+        const response = await fetch("https://s0hr7iwr7u.hzh.sealos.run/select_comment", {
+            method: "GET",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            mode: "cors" // 明确指定为 cors 模式
+        });
+        // 尝试获取原始文本内容
+        const textData = await response.text();
+        console.log("Raw Text Data:", textData);
+
+        // 尝试解析为 JSON 格式
+        const jsonData = JSON.parse(textData);
+        console.log("Parsed JSON Data:", jsonData);
+
+        if (jsonData.ok) {
+            const data = await jsonData;
+            const count = data.count;
+
+            // 显示评论
+            showComments(count, data.result);
+
+        } else {
+            const errorData = await jsonData;
+            alert("注册失败: " + errorData.message);
+        }
+    } catch (error) {
+        console.error("请求出错:", error);
+        alert("可能网络存在问题！");
+    }
+}
+
+
+function showComments(count,messageData) {
+    const messageBox = document.getElementById("messageBox");
+    messageBox.innerHTML = ""; // 清空留言框
+    var i = 0;
+    for (i = 0; i < count; i++) {
+        const newMessage = document.createElement("div");
+        newMessage.classList.add("message");
+        newMessage.innerHTML = `<strong>${messageData[i].name}：</strong>${messageData[i].word}`;
+        messageBox.appendChild(newMessage);
+    }
+}
+
+async function submitComments(userName,userMessage) {
+    try {
+        const response = await fetch("https://s0hr7iwr7u.hzh.sealos.run/add_comment", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify({
+                name: userName,
+                word: userMessage
+            }),
+            mode: "cors" // 明确指定为 cors 模式
+        });
+        // 尝试获取原始文本内容
+        const textData = await response.text();
+        console.log("Raw Text Data:", textData);
+
+        // 尝试解析为 JSON 格式
+        const jsonData = JSON.parse(textData);
+        console.log("Parsed JSON Data:", jsonData);
+
+        if (jsonData.ok) {
+            const data = await jsonData;
+            alert("评论上传成功！");
+        } else {
+            const errorData = await jsonData;
+            alert("评论上传失败：" + errorData.message);
+        }
+    } catch (error) {
+        console.error("请求出错:", error);
+        alert("可能是网络问题，上传失败！");
+    }
+}
 
 window.onload = function () {
     fetchIP();
+    getComments();
 }
+
+document.getElementById('messageSubmit').addEventListener('click', function (event) {
+    event.preventDefault(); // 阻止默认行为
+    var username = document.getElementById('userName').value; // 获取用户名
+    var userMessage = document.getElementById('userMessage').value; // 获取密码
+    if (username === "")
+    {
+        username="匿名";
+    }
+    submitComments(username, userMessage); // 调用提交注册信息的函数
+    getComments();
+
+    document.getElementById('userName').value = "";
+    document.getElementById('userMessage').value = "";
+    });
