@@ -1,29 +1,21 @@
 # WeatherReport-Vue
 
-This template should help get you started developing with Vue 3 in Vite.
+这是一个用 Vue 框架重新构建的自选题目——天气预报网页的前端代码仓库
 
-## Recommended IDE Setup
+## 项目功能
 
-[VSCode](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur).
+在原先项目只有输入地区查询天气这一单一功能情况下，我们保留了这一最关键的功能。同时我们意识到用户大部分的场景下都是查询本地天气，所以我们在用户刚打开本页面时候就查询用户的 IP 地理位置，并根据获得的地理位置来直接展示用户当地的天气信息，这些天气信息不仅有实时天气，还增加了三天内的天气，气温浮动状况，并且我们给天气配图，使得天气更加直观醒目，并且增加了更新时间的显示，让用户知道他所获得的天气信息于几时更新。
 
-## Customize configuration
+我们还意识到，用户有些时候对于天气有些自己的看法，所以我们创建了登陆注册功能，并且在用户登录的前提下提供了留言墙的功能，让用户可以浏览别人对于天气的看法。
 
-See [Vite Configuration Reference](https://vite.dev/config/).
-
-## Project Setup
+## 项目安装
 
 ```sh
 npm install
 ```
 
-### Compile and Hot-Reload for Development
+### 编译并运行项目
 
 ```sh
 npm run dev
-```
-
-### Compile and Minify for Production
-
-```sh
-npm run build
 ```
